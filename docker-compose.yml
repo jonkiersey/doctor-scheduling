@@ -1,0 +1,17 @@
+
+version: "3.9"
+services:
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: pgpw
+      POSTGRES_DB: schedules
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
+    name: schedules-db
